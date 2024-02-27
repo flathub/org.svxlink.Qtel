@@ -86,6 +86,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/sm0svx/svxlink.git
-        commit: a4e9aec8762d26236e736b0518026455a062dc63
+        commit: 55ffa8a494e1228352b5b5b1f9512c1da79b2cf4
       - type: patch
         path: qtel-metainfo.patch
