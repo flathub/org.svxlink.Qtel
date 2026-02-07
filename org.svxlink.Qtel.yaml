@@ -51,6 +51,8 @@ modules:
       no-debuginfo: true
     cleanup:
       - /bin
+    post-install:
+      - chmod u+w ${FLATPAK_DEST}/lib/libtcl*.so*
     sources:
       - type: archive
         url: https://downloads.sourceforge.net/project/tcl/Tcl/8.6.13/tcl8.6.13-src.tar.gz
