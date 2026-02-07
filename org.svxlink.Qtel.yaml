@@ -24,16 +24,8 @@ cleanup:
   - "*.la"
 
 modules:
-  - name: mm-common
-    cleanup:
-      - /bin
-      - /lib
-    sources:
-      - type: archive
-        url: https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.6.tar.xz
-        sha256: b55c46037dbcdabc5cee3b389ea11cc3910adb68ebe883e9477847aa660862e7
-
   - name: libsigc++-2.0
+    buildsystem: meson
     sources:
       - type: archive
         url: https://github.com/libsigcplusplus/libsigcplusplus/releases/download/2.12.1/libsigc++-2.12.1.tar.xz
@@ -59,6 +51,8 @@ modules:
       no-debuginfo: true
     cleanup:
       - /bin
+    post-install:
+      - chmod u+w ${FLATPAK_DEST}/lib/libtcl*.so*
     sources:
       - type: archive
         url: https://downloads.sourceforge.net/project/tcl/Tcl/8.6.13/tcl8.6.13-src.tar.gz
